@@ -1,0 +1,23 @@
+/* Practice / Exam simulator / tabs. Uses theme tokens from style.css */
+.xw{max-width:980px}.xcta{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 20px;padding:14px;background:var(--accent-soft);border-radius:12px}
+.xform{display:flex;gap:14px;flex-wrap:wrap;align-items:end;margin-top:14px}.xform label{display:grid;gap:4px;font-weight:500}
+.xform select{padding:9px 10px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--fg);font:inherit;min-width:180px}
+.xbar{position:sticky;top:0;z-index:10;display:flex;gap:16px;align-items:center;justify-content:space-between;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin-bottom:14px}
+.xs{display:block;font-size:13px;color:var(--muted)}.xt{font:600 26px var(--font-mono);font-variant-numeric:tabular-nums}.xt.low{color:var(--bad)}
+.xg{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:16px;align-items:start}
+.xcard,.xp,.xri{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px}
+.xm{font-size:13px;color:var(--muted)}.xtx{font:600 17px/1.6 var(--font-head);margin:6px 0 12px}
+.xo{display:flex;gap:10px;width:100%;text-align:left;margin:0 0 8px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--fg);font:inherit;cursor:pointer}
+.xo b{min-width:20px;color:var(--accent)}.xo:hover:not(:disabled){border-color:var(--accent)}.xo.sel{border-color:var(--accent);background:var(--accent-soft)}
+.xo.ok{background:var(--ok-soft);border-color:var(--ok)}.xo.bad{background:var(--bad-soft);border-color:var(--bad)}.xe{background:var(--hl-soft);color:var(--hl-fg);padding:8px 12px;border-radius:8px}
+.xnav{display:flex;gap:8px;justify-content:space-between;flex-wrap:wrap;margin-top:12px}
+.xpg{display:grid;grid-template-columns:repeat(auto-fill,minmax(34px,1fr));gap:5px;max-height:60vh;overflow:auto}
+.xpg button{padding:6px 0;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg);font:inherit;cursor:pointer}
+.xpg .a,.xlg i.a{background:var(--accent);color:var(--accent-fg)}.xpg .f,.xlg i.f{outline:2px solid var(--hl)}.xpg .c,.xlg i.c{border-color:var(--fg)}
+.xlg{font-size:12px;color:var(--muted)}.xlg i{display:inline-block;width:12px;height:12px;border:1px solid var(--line);border-radius:3px;margin:0 4px 0 8px;vertical-align:-1px}
+.xph{font-weight:600;margin-bottom:8px}.xscore big{font:700 44px var(--font-head)}.xri{margin-bottom:10px}
+.xtabs{display:flex;gap:6px;margin:18px 0;border-bottom:1px solid var(--line)}.xtabs button{padding:10px 16px;border:0;border-bottom:3px solid transparent;background:none;color:var(--muted);font:600 15px var(--font-head);cursor:pointer}
+.xtabs .on{color:var(--accent);border-color:var(--accent)}.xmb{display:grid;grid-template-columns:70px 1fr 56px;gap:8px;align-items:center;margin:4px 0}
+.xmb s{display:block;height:8px;border-radius:4px;background:var(--accent)}.xmb span:nth-child(2){background:var(--surface2);border-radius:4px}
+@media(max-width:760px){.xg{grid-template-columns:1fr}.xp{order:-1}.xpg{max-height:130px}}
+.xi{display:block;max-width:100%;border-radius:8px;margin:6px 0 12px}
