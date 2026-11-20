@@ -3,7 +3,7 @@ const store={get(){try{return JSON.parse(localStorage.getItem('dlq')||'{}')}catc
 const QZ={};
 function quizHTML(id,qs,showMod){
   QZ[id]={qs,ans:{}};
-  return `<div class="quiz" data-quiz="${id}">`+qs.map((q,i)=>`<div class="q" data-i="${i}"><p class="qt"><span class="qn">${i+1}</span>${showMod&&q.m?`<span class="tag">${q.m}</span>`:''}${q.img?`<img class="xi" loading="lazy" alt="โจทย์" src="${q.img}">`:q.q}</p><div class="opts">${q.c.map((c,j)=>`<button type="button" class="opt" data-j="${j}"><span class="ol">${'กขคง'[j]}</span><span>${q.img?'เลือกข้อ '+c:c}</span></button>`).join('')}</div><div class="ex" hidden></div></div>`).join('')+`<div class="qsum" hidden></div></div>`;
+  return `<div class="quiz" data-quiz="${id}">`+qs.map((q,i)=>`<div class="q" data-i="${i}"><p class="qt"><span class="qn">${i+1}</span>${showMod&&q.m?`<span class="tag">${q.m}</span>`:''}${q.q}</p><div class="opts">${q.c.map((c,j)=>`<button type="button" class="opt" data-j="${j}"><span class="ol">${'กขคง'[j]}</span><span>${c}</span></button>`).join('')}</div><div class="ex" hidden></div></div>`).join('')+`<div class="qsum" hidden></div></div>`;
 }
 const total=M.reduce((s,m)=>s+m.n,0);
 function navHTML(cur){

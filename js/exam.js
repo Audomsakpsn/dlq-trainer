@@ -5,10 +5,10 @@ const shuf=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1
 const fmt=s=>String(s/60|0).padStart(2,'0')+':'+String(s%60).padStart(2,'0');
 const ld=()=>{try{return JSON.parse(localStorage.getItem(ST))}catch(e){return null}};
 const sv=s=>{try{s?localStorage.setItem(ST,JSON.stringify(s)):localStorage.removeItem(ST)}catch(e){}};
-const bank=()=>{const seen=new Set(),out=[],add=(q,m)=>{if(!seen.has(q.q)){seen.add(q.q);out.push({q:q.q,c:q.c,a:q.a,e:q.e||'',m,img:q.img})}};
-  M.forEach(m=>m.quiz.forEach(q=>add(q,m.id)));(window.BANK||[]).forEach(q=>add(q,q.m));(window.BANK_IMG||[]).forEach(q=>add({q:q.img,img:q.img,c:['a','b','c','d'],a:q.a},q.m));return out};
-const prep=q=>{if(q.img)return q;const o=shuf(q.c.map((t,i)=>[t,i===q.a]));return{...q,c:o.map(x=>x[0]),a:o.findIndex(x=>x[1])}};
-const qHTML=(q,i,sel,rev)=>`<div class="xq"><div class="xm">M.${q.m} · ข้อ ${i+1}</div>${q.img?`<img class="xi" loading="lazy" alt="โจทย์" src="${q.img}">`:`<p class="xtx">${q.q}</p>`}${q.c.map((t,j)=>`<button type="button" class="xo${rev?(j===q.a?' ok':j===sel?' bad':''):(j===sel?' sel':'')}" data-j="${j}"${rev?' disabled':''}><b>${L[j]}</b><span>${q.img?'ข้อ '+L[j]:t}</span></button>`).join('')}${rev&&q.e?`<p class="xe">${q.e}</p>`:''}</div>`;
+const bank=()=>{const seen=new Set(),out=[],add=(q,m)=>{if(!seen.has(q.q)){seen.add(q.q);out.push({q:q.q,c:q.c,a:q.a,e:q.e||'',m})}};
+  M.forEach(m=>m.quiz.forEach(q=>add(q,m.id)));(window.BANK||[]).forEach(q=>add(q,q.m));return out};
+const prep=q=>{const o=shuf(q.c.map((t,i)=>[t,i===q.a]));return{...q,c:o.map(x=>x[0]),a:o.findIndex(x=>x[1])}};
+const qHTML=(q,i,sel,rev)=>`<div class="xq"><div class="xm">M.${q.m} · ข้อ ${i+1}</div><p class="xtx">${q.q}</p>${q.c.map((t,j)=>`<button type="button" class="xo${rev?(j===q.a?' ok':j===sel?' bad':''):(j===sel?' sel':'')}" data-j="${j}"${rev?' disabled':''}><b>${L[j]}</b><span>${t}</span></button>`).join('')}${rev&&q.e?`<p class="xe">${q.e}</p>`:''}</div>`;
 let tick=null;
 
 /* ---------- Practice ---------- */
